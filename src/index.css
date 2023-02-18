@@ -1,0 +1,69 @@
+@font-face {
+  font-family: GuDianMingChaoTi;
+  font-weight: bold;
+  src: url('./assets/font/GuDianMingChaoTi.ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  :root {
+    --white: rgba(255, 255, 255, 1);
+    --white-light: rgba(255, 255, 255, .8);
+    --white-lighter: rgba(255, 255, 255, 0.1);
+    --black: rgba(10, 20, 30, 1);
+    --black-light: rgba(10, 20, 30, .8);
+    --black-lighter: rgba(10, 20, 30, 0.1);
+    --theme-color: #e06458;
+    --font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Helvetica Neue', sans-serif;
+  }
+
+  .dark {
+    --font-color: var(--white);
+    --background-color: var(--black);
+    --background-mask-color: var(--black-light);
+  }
+
+  .light {
+    --font-color: var(--black);
+    --background-color: var(--white);
+    --background-mask-color: var(--white-light);
+  }
+
+  * {
+    font-family: var(--font-family);
+  }
+
+  body {
+    color: var(--font-color);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* custom scrollBar */
+  ::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: var(--background-mask-color);
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--theme-color);
+  }
+
+  /* custom selection */
+  ::selection {
+    color: var(--white);
+    background-color: var(--theme-color);
+  }
+}
